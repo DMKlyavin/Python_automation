@@ -1,10 +1,10 @@
-from adress import Address
+from Lesson_3.address import Address
 from mailing import Mailing
 
-letter = Mailing(Address("г.Владимир", "ул.Смоленская", "д.10", "кв.1", "600029"),
-                 Address("г.Светлогорск",  "ул.Приморская",
-                         "д.11", "кв.8", "238563"),
-                 "400 ₽", "805 130 969 12500")
 
-print(f"Письмо с номером отслеживания: {letter.track} отправлено с адреса: {
-      letter.from_address}. В пункт назначения: {letter.to_address}. Стоимость отправления составляет: {letter.cost}")
+to_address = Address("238563", "г.Светлогорск", "ул.Приморская", "д.1", "кв.5")
+from_address = Address("600029", "г.Владимир", "ул.Смоленская", "д.10", "кв.33")
+mailing = Mailing(to_address, from_address, 500, 123)
+
+print(f"Отправление № {mailing.track} из {to_address.index} {to_address.city}, {to_address.street}, {to_address.house} - {to_address.apartment} в {
+      from_address.index}, {from_address.city}, {from_address.street}, {from_address.house} - {from_address.apartment}. Стоимость {mailing.cost} рублей.")
